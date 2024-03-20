@@ -20,6 +20,15 @@ class LLMFactory:
             llm = Bedrock(model_id="anthropic.claude-v2",
                           client=self.bedrock_runtime, 
                           model_kwargs=inference_modifier)
+        elif: llm_model == 'anthropic.claude-3-sonnet':
+                        inference_modifier = {'max_tokens_to_sample': 4096, 
+                                  "temperature": 0.01,
+                                  "top_k": 250,
+                                  "top_p": 1,
+                                  "stop_sequences": ["\n\nHuman"]}
+            llm = Bedrock(model_id="anthropic.claude-3-sonnet-20240229-v1:0",
+                          client=self.bedrock_runtime, 
+                          model_kwargs=inference_modifier)
         else:
             st.error('LLM not supported yet')
             st.stop()
