@@ -73,7 +73,7 @@ def build_sidebar():
             
         st.divider()
 
-        model_list = ('anthropic.claude-v2','anthropic.claude-3-sonnet-20240229-v1:0')
+        model_list = ('anthropic.claude-v2','anthropic.claude-3-sonnet')
         st.selectbox("Pick the LLM", model_list, index=0, key="llm_model")
         st.divider()
 
