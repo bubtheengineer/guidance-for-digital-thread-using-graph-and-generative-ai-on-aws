@@ -1,4 +1,5 @@
 from langchain.llms.bedrock import Bedrock
+from langchain_community.chat_models import BedrockChat
 import streamlit as st
 import boto3
 
@@ -26,7 +27,7 @@ class LLMFactory:
                                   "top_k": 250,
                                   "top_p": 1,
                                   "stop_sequences": ["\n\nHuman"]}
-            llm = Bedrock(model_id="anthropic.claude-3-sonnet-20240229-v1:0",
+            llm = BedrockChat(model_id="anthropic.claude-3-sonnet-20240229-v1:0",
                           client=self.bedrock_runtime, 
                           model_kwargs=inference_modifier)
         else:
