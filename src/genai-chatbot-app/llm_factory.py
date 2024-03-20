@@ -20,8 +20,8 @@ class LLMFactory:
             llm = Bedrock(model_id="anthropic.claude-v2",
                           client=self.bedrock_runtime, 
                           model_kwargs=inference_modifier)
-        elif: llm_model == 'anthropic.claude-3-sonnet':
-                        inference_modifier = {'max_tokens_to_sample': 4096, 
+        elif llm_model == 'anthropic.claude-3-sonnet':
+            inference_modifier = {'max_tokens_to_sample': 4096, 
                                   "temperature": 0.01,
                                   "top_k": 250,
                                   "top_p": 1,
