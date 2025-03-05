@@ -21,29 +21,20 @@ class LLMFactory:
     
         model_list = AppConfig().get_model_list()
 
-        if llm_model == 'Claude 2.1':
-            model_id = 'anthropic.claude-v2:1'
-        elif llm_model == 'Claude 3 Sonnet':
-            model_id = 'anthropic.claude-3-sonnet-20240229-v1:0'
-        elif llm_model == 'Claude 3.5 Sonnet':
-            model_id = 'anthropic.claude-3-5-sonnet-20240620-v1:0'
-        elif llm_model == 'Llama 3 70b Instruct':
-            model_id = 'meta.llama3-70b-instruct-v1:0'
-        elif llm_model == 'Mistral Large':
-            model_id = 'mistral.mistral-large-2402-v1:0'
+        if llm_model == 'Claude 3.7 Sonnet':
+            model_id = 'anthropic.claude-3-7-sonnet-20250219-v1:0'
+        elif llm_model == 'Claude 3.5 Sonnet v2':
+            model_id = 'anthropic.claude-3-5-sonnet-20241022-v2:0'
+        elif llm_model == 'Amazon Nova Pro':
+            model_id = 'amazon.nova-pro-v1:0'
         else:
             model_id = ''
 
         model_id_list = ('anthropic.claude-v2',
-                      'anthropic.claude-v2:1',
-                      'anthropic.claude-3-haiku-20240307-v1:0', 
-                      'anthropic.claude-3-sonnet-20240229-v1:0',
-                      'anthropic.claude-3-5-sonnet-20240620-v1:0',
-                      'meta.llama3-8b-instruct-v1:0',
-                      'meta.llama3-70b-instruct-v1:0',
-                      'mistral.mistral-large-2402-v1:0',
-                      'mistral.mixtral-8x7b-instruct-v0:1'
-                      )
+                         'anthropic.claude-3-7-sonnet-20250219-v1:0',
+                         'anthropic.claude-3-5-sonnet-20241022-v2:0',
+                         'amazon.nova-pro-v1:0'
+                        )
         if model_id in model_id_list:
             llm = ChatBedrock(model_id=model_id,
                           client=self.bedrock_runtime, 
