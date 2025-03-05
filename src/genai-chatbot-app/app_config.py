@@ -10,11 +10,9 @@ class AppConfig:
     cognito_app_client_secret = os.environ.get("COGNITO_APP_CLIENT_SECRET")
     
     model_list = (
-                  #'Claude 2.1',
-                  #'Claude 3 Sonnet',
-                  'Claude 3.5 Sonnet',
-                  #'Llama 3 70b Instruct',
-                  #'Mistral Large'
+                  'Claude 3.5 Sonnet v2',
+                  'Claude 3.7 Sonnet',
+                  'Amazon Nova Pro'
                   )
     
     CYPHER_CUSTOM_TEMPLATE = """<Instructions>
