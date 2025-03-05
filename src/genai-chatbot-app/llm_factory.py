@@ -30,8 +30,7 @@ class LLMFactory:
         else:
             model_id = ''
 
-        model_id_list = ('anthropic.claude-v2',
-                         'anthropic.claude-3-7-sonnet-20250219-v1:0',
+        model_id_list = ('anthropic.claude-3-7-sonnet-20250219-v1:0',
                          'anthropic.claude-3-5-sonnet-20241022-v2:0',
                          'amazon.nova-pro-v1:0'
                         )
